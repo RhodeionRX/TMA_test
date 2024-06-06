@@ -1,5 +1,4 @@
 import './App.css'
-import WebApp from "@twa-dev/sdk";
 import {Product, state} from "./data/state.ts";
 import {ProductCard} from "./components/ProductCard.tsx";
 import {Button} from "./components/Basic/Button.tsx";
