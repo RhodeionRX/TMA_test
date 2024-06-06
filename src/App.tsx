@@ -2,7 +2,7 @@ import './App.css'
 import {Product, state} from "./data/state.ts";
 import {ProductCard} from "./components/ProductCard.tsx";
 import {Button} from "./components/Basic/Button.tsx";
-import {getChatId, sendMessage} from "./Http/telegram.ts";
+import {sendMessage} from "./Http/telegram.ts";
 import React, {useEffect} from "react";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
     });
 
     async function handleCart(item: Product) {
+        setChat(1);
         sendMessage({
             chat_id: chat.data.result[0].message.chat.id,
             message: `Принят заказ на товар "${item.title}".\nЦена: ${item.price} руб.`
