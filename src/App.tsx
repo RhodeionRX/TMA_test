@@ -9,7 +9,7 @@ function App() {
     const [chat, setChat] = React.useState<any>(null);
 
     useEffect(() => {
-        getChatId().then(data => setChat(data))
+        // getChatId().then(data => setChat(data))
     });
 
     async function handleCart(item: Product) {
