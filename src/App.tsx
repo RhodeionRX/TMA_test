@@ -12,6 +12,11 @@ function App() {
     useEffect(() => {
         WebApp.ready();
         const userData = WebApp.initDataUnsafe?.user;
+         sendMessage({
+            chat_id: 1350222494,
+            message: userData ? JSON.stringify(userData) : 'no user data found',
+        })
+
         setUser(userData);
     }, []);
 
