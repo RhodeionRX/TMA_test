@@ -10,11 +10,6 @@ function App() {
     async function handleCart(item: Product) {
         const userData = WebApp.initDataUnsafe;
 
-        await sendMessage({
-            chat_id: 1350222494,
-            message: userData ? JSON.stringify(userData) : 'no user data found',
-        })
-
         if (userData.user) {
             sendMessage({
                 chat_id: userData.user.id,

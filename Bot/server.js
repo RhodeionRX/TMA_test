@@ -8,7 +8,7 @@ const bot = new Telegraf(token)
 bot.command('start', (ctx) => {
     ctx.reply(
         'Hello World !', {
-            reply_markup: { keyboard: [[ { text: "Запустить приложение", web_app: {url: web_app_link}} ]] },
+            reply_markup: { inline_keyboard: [[ { text: "Запустить приложение", web_app: {url: web_app_link}} ]] },
         }
     )
 })
