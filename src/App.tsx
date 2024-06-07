@@ -4,9 +4,16 @@ import {ProductCard} from "./components/ProductCard.tsx";
 import {Button} from "./components/Basic/Button.tsx";
 import {sendMessage} from "./Http/telegram.ts";
 import WebApp from "@twa-dev/sdk";
+import {useEffect, useState} from "react";
 
 function App() {
-    const user = WebApp.initDataUnsafe?.user;
+    const [user, setUser] = useState<any>(null)
+
+    useEffect(() => {
+        WebApp.ready();
+        const userData = WebApp.initDataUnsafe?.user;
+        setUser(userData);
+    }, []);
 
     async function handleCart(item: Product) {
 
