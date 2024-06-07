@@ -1,7 +1,7 @@
 import { Telegraf, Markup } from 'telegraf'
 import { message } from 'telegraf/filters'
 
-const token = '6915055479:AAHYV2iUaE0GZavInhXZD2cKteVyVdPttzo'
+const token = '6915055479:AAEkjxkXkLu7HE-EasLmVxeidaSqgzUaW6Y'
 const web_app_link = 'https://rhodeionrx.github.io/TMA_test/';
 const bot = new Telegraf(token)
 

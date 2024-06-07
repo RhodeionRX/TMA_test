@@ -2,12 +2,15 @@ import './App.css'
 import {Product, state} from "./data/state.ts";
 import {ProductCard} from "./components/ProductCard.tsx";
 import {Button} from "./components/Basic/Button.tsx";
-import {getChatId, sendMessage} from "./Http/telegram.ts";
+import {getUpdates, sendMessage} from "./Http/telegram.ts";
 
-function App() {
+function App({user}: {user: any}) {
 
     async function handleCart(item: Product) {
-        getChatId().then(data => {
+
+        getUpdates().then(data => {
+            console.log(data);
+            console.log(user);
             if(data.data.result.length > 0) {
                 sendMessage({
                     chat_id: data.data.result[0].message.chat.id,
@@ -23,6 +26,12 @@ function App() {
 
   return (
       <>
+          <div>
+              test
+              {
+                  JSON.stringify(user, null)
+              }
+          </div>
           {
               state.products.map(item =>
                   <ProductCard product={item} key={item.id}>
