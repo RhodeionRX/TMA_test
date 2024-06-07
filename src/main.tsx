@@ -6,6 +6,7 @@ import WebApp from '@twa-dev/sdk'
 
 WebApp.ready();
 WebApp.expand();
+WebApp.isClosingConfirmationEnabled = true;
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
