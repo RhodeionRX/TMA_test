@@ -1,6 +1,35 @@
 .card {
-  margin-top: 0.5rem !important;
   background-color: var(--tg-theme-secondary-bg-color);
-  border-radius: 10px;
+  border: 1px solid var(--tg-theme-hint-color);
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-header img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.card-header .user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  margin-bottom: 16px;
+  line-height: 1.5;
 }
