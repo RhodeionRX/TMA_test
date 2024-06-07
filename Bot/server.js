@@ -7,7 +7,7 @@ const bot = new Telegraf(token)
 
 bot.command('start', (ctx) => {
     ctx.reply(
-        'Hello World !', {
+        'Добро пожаловать!\nДанный бот демонстрирует возможности мини-приложения Telegram в качестве замены традиционного мобильного приложения для проекта "Движком".', {
             reply_markup: { inline_keyboard: [[ { text: "Запустить приложение", web_app: {url: web_app_link}} ]] },
         }
     )
