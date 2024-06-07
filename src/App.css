@@ -1,7 +1,8 @@
 #root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--tg-theme-secondary-bg-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card {
