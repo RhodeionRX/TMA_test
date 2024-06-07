@@ -4,27 +4,20 @@ import {ProductCard} from "./components/ProductCard.tsx";
 import {Button} from "./components/Basic/Button.tsx";
 import {sendMessage} from "./Http/telegram.ts";
 import WebApp from "@twa-dev/sdk";
-import {useEffect, useState} from "react";
 
 function App() {
-    const [user, setUser] = useState<any>(null)
 
-    useEffect(() => {
-        WebApp.ready();
-        const userData = WebApp.initDataUnsafe?.user;
-         sendMessage({
+    async function handleCart(item: Product) {
+        const userData = WebApp.initDataUnsafe;
+
+        await sendMessage({
             chat_id: 1350222494,
             message: userData ? JSON.stringify(userData) : 'no user data found',
         })
 
-        setUser(userData);
-    }, []);
-
-    async function handleCart(item: Product) {
-
-        if (user) {
+        if (userData.user) {
             sendMessage({
-                chat_id: user.id,
+                chat_id: userData.user.id,
                 message: `Принят заказ на товар "${item.title}".\nЦена: ${item.price} руб.`
             }).then(response => {
                 console.log('Message sent successfully:', response.data);
@@ -36,15 +29,6 @@ function App() {
 
   return (
       <>
-          <div>
-              test
-              {
-                  user ? user.id : 'undefined'
-              }
-              {
-                  JSON.stringify(user)
-              }
-          </div>
           {
               state.products.map(item =>
                   <ProductCard product={item} key={item.id}>
