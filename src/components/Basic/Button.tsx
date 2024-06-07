@@ -5,7 +5,7 @@ export const Button = ({title, onClick}: {
     onClick?: (event: MouseEvent<HTMLButtonElement>) => void
 }) => {
     return (
-        <button type="button" className="btn btn-primary" onClick={onClick}>
+        <button type="button" className="button" onClick={onClick}>
             {title}
         </button>
     );
