@@ -31,6 +31,9 @@ function App() {
           <div>
               test
               {
+                  user ? user.id : 'undefined'
+              }
+              {
                   JSON.stringify(user)
               }
           </div>
