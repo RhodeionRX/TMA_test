@@ -6,11 +6,9 @@ import WebApp from '@twa-dev/sdk'
 
 WebApp.ready();
 WebApp.expand();
-const user = WebApp.initDataUnsafe?.user;
-console.log(user);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App user={user} />
+    <App />
   </React.StrictMode>,
 )

@@ -3,8 +3,10 @@ import {Product, state} from "./data/state.ts";
 import {ProductCard} from "./components/ProductCard.tsx";
 import {Button} from "./components/Basic/Button.tsx";
 import {getUpdates, sendMessage} from "./Http/telegram.ts";
+import WebApp from "@twa-dev/sdk";
 
-function App({user}: {user: any}) {
+function App() {
+    const user = WebApp.initDataUnsafe?.user;
 
     async function handleCart(item: Product) {
 
@@ -29,7 +31,7 @@ function App({user}: {user: any}) {
           <div>
               test
               {
-                  JSON.stringify(user, null)
+                  JSON.stringify(user)
               }
           </div>
           {
